@@ -162,10 +162,10 @@ footer {
 
 form {
   display: inline-block;
-  background: #fff;
+  background: #be4b8f;
   padding: 45px;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgb(3, 3, 3);
 }
 
 input {
@@ -180,7 +180,7 @@ input {
 /* 🔁 Responsividade para telas pequenas */
 @media (max-width: 600px) {
   .pagina-login {
-    padding: 240px 40px; /*altura do formulario de login*/
+    padding: 400px 40px; /*altura do formulario de login*/
   }
 
   form {
