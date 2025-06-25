@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Clube da Bíblia Kids</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pagina-login">
+  <main>
+  <form id="loginForm">
+  <img src="logo_clube_kids.png" alt="Logo Clube da Bíblia Kids" class="logo-login" />
+  
+  <input type="text" id="usuario" placeholder="Usuário" required />
+  <input type="password" id="senha" placeholder="Senha" required />
+  <button type="submit">Entrar</button>
+</form>
+
+
+  <p id="mensagem" style="color: red; margin-top: 15px;"></p>
+</main>
+
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+
+      if (usuario === 'admin' && senha === '1234') {
+        localStorage.setItem('autenticado', 'true');
+        window.location.href = 'index.html';
+      } else {
+        document.getElementById('mensagem').textContent = 'Usuário ou senha incorretos.';
+      }
+    });
+  </script>
+</body>
+</html>
+<p>&copy; 2025 Clube da Bíblia Kids</p>
+<p>Uma organização Colégio Batista Riopretense</p>

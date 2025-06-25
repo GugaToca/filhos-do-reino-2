@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clube da Bíblia Kids</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+  if (localStorage.getItem('autenticado') !== 'true') {
+    window.location.href = 'login.html';
+  }
+</script>
+
+<script>
+  function logout() {
+    localStorage.removeItem('autenticado');
+    window.location.href = 'login.html';
+  }
+</script>
+
+</head>
+
+<body id="pagina-principal">
+  <header>
+    <img src="logo_clube_kids.png" alt="logo clube kids" class="mascote" />
+    <img src="logo_colegio.png" alt="logo clube kids" class="mascote" />
+    <h1>Clube da Bíblia Kids</h1>
+    <p class="versiculo">"Ensina a criança no caminho em que deve andar..." - Provérbios 22:6</p>
+  </header>
+
+
+
+  <nav>
+    <ul>
+      <li><a href="historias.html">📖 Histórias</a></li>
+      <li><a href="#">🎮 Jogos</a></li>
+      <li><a href="devocional.html">📖 Devocionais</a></li>
+      <li><a href="#">🧩 Atividades</a></li>
+      <button class="btn-logoff" onclick="logout()">Sair</button>
+    </ul>
+  </nav>
+
+    <main>
+    <section class="destaque">
+      <h2>Devocional do Dia:</h2>
+      <p><strong>DIA: 24/06</strong></p>
+      <p><strong>CONHEÇA A HÍSTORIA DE DAVÍ E GOLIAS!</strong></p>
+      <a href="devocional.html">
+      <button>Ler Agora</button>
+    </a>
+    </section>
+
+
+    <section class="destaque">
+      <h2>Destaque da Semana</h2>
+      <p>CONHEÇA A HISTORIA DO PROFETA JONAS!</p>
+      <button onclick="alert('Em breve!')">Ler Agora</button>
+    </section>
+
+    <section class="destaque">
+      <h2>Destaque da Semana</h2>
+      <p>CONHEÇA A HISTORIA DE DANIEL NA COVA DOS LEÕES!</p>
+      <button onclick="alert('Em breve!')">Ler Agora</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Clube da Bíblia Kids | Colégio Batista RioPretense</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
