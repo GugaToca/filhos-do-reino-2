@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem Sou Eu? - Clube da Bíblia Kids</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .jogo-container {
+      max-width: 300px;
+      margin: 60px auto;
+      background: #661343;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .pergunta {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .opcao {
+      display: block;
+      background: #f1cd39;
+      color: #020202;
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      margin: 22px auto;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 300px;
+      transition: background 0.3s;
+    }
+
+    .opcao:hover {
+      background: #f39c12;
+    }
+
+    .resultado {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body id="pagina-principal">
+  <header>
+    <h1>🙋 Quem Sou Eu?</h1>
+    <p>Adivinhe o personagem bíblico com base nas pistas!</p>
+    <a href="jogos.html" class="btn-login">Voltar</a>
+  </header>
+
+  <main>
+    <div class="jogo-container">
+      <div class="pergunta" id="pergunta"></div>
+      <div id="opcoes"></div>
+      <div class="resultado" id="resultado"></div>
+      <button onclick="proximaPergunta()" style="margin-top: 20px; display: none;" id="btnProximo">Próxima</button>
+    </div>
+  </main>
+
+  <script>
+    const perguntas = [
+      {
+        dica: "Fui lançado na cova dos leões por orar a Deus.",
+        opcoes: ["Davi", "Daniel", "Jonas", "José"],
+        resposta: "Daniel"
+      },
+      {
+        dica: "Matei um gigante com uma pedra.",
+        opcoes: ["Sansão", "Davi", "Elias", "Salomão"],
+        resposta: "Davi"
+      },
+      {
+        dica: "Fui engolido por um grande peixe.",
+        opcoes: ["Jonas", "Pedro", "Noé", "Moisés"],
+        resposta: "Jonas"
+      },
+      {
+        dica: "Construi uma arca por ordem de Deus.",
+        opcoes: ["Moisés", "Abraão", "Noé", "Josué"],
+        resposta: "Noé"
+      }
+    ];
+
+    let indice = 0;
+
+    function carregarPergunta() {
+      const perguntaAtual = perguntas[indice];
+      document.getElementById('pergunta').textContent = perguntaAtual.dica;
+      const containerOpcoes = document.getElementById('opcoes');
+      containerOpcoes.innerHTML = '';
+      document.getElementById('resultado').textContent = '';
+      document.getElementById('btnProximo').style.display = 'none';
+
+      perguntaAtual.opcoes.forEach(opcao => {
+        const btn = document.createElement('button');
+        btn.textContent = opcao;
+        btn.className = 'opcao';
+        btn.onclick = () => verificarResposta(opcao);
+        containerOpcoes.appendChild(btn);
+      });
+    }
+
+    function verificarResposta(respostaSelecionada) {
+      const correta = perguntas[indice].resposta;
+      const resultado = document.getElementById('resultado');
+      if (respostaSelecionada === correta) {
+        resultado.textContent = '🎉 Parabéns! Você acertou!';
+        resultado.style.color = 'green';
+      } else {
+        resultado.textContent = `❌ Ops! A resposta correta era "${correta}".`;
+        resultado.style.color = 'red';
+      }
+      document.getElementById('btnProximo').style.display = 'inline-block';
+    }
+
+    function proximaPergunta() {
+      indice++;
+      if (indice < perguntas.length) {
+        carregarPergunta();
+      } else {
+        document.getElementById('pergunta').textContent = '🏁 Fim do jogo!';
+        document.getElementById('opcoes').innerHTML = '';
+        document.getElementById('resultado').textContent = 'Você completou todas as perguntas!';
+        document.getElementById('btnProximo').style.display = 'none';
+      }
+    }
+
+    carregarPergunta();
+  </script>
+</body>
+</html>
