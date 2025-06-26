@@ -180,11 +180,14 @@ input {
 /* 🔁 Responsividade para telas pequenas */
 @media (max-width: 600px) {
   .pagina-login {
-    padding: 400px 40px; /*altura do formulario de login*/
+    background: url('imagem_fundo_body.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* 🔒 Fundo fixo */
+    padding: 400px 40px;
   }
 
   form {
-    padding: 35px; /*espaço interno do formulario*/
+    padding: 35px;
   }
 
   input {
@@ -192,6 +195,7 @@ input {
     font-size: 1em;
   }
 }
+
 
 .logo-login {
   width: 160px;
