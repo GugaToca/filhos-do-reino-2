@@ -162,7 +162,7 @@ footer {
 
 form {
   display: inline-block;
-  background: #be4b8f;
+  background: #661343;
   padding: 45px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgb(3, 3, 3);
@@ -183,7 +183,7 @@ input {
     background: url('imagem_fundo_body.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed; /* 🔒 Fundo fixo */
-    padding: 400px 40px;
+    padding: 200px 40px;
   }
 
   form {
@@ -204,7 +204,7 @@ input {
 }
 
 .btn-logoff {
-  background-color: #fa6969;
+  background-color: #f55c5c;
   color: rgb(255, 255, 255);
   padding: 8px 16px;
   font-size: 1rem;
@@ -218,4 +218,21 @@ input {
 
 .btn-logoff:hover {
   background-color: #d63031;
+}
+
+.btn-login {
+  background-color: #f5c907; /* verde suave */
+  color: rgb(3, 3, 3);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #f6f861; /* verde mais escuro no hover */
 }
