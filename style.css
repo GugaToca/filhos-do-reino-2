@@ -237,3 +237,15 @@ input {
 .btn-login:hover {
   background-color: #f6f861; /* verde mais escuro no hover */
 }
+.btn-login:hover {
+  background-color: #f6f861; /* verde mais escuro no hover */
+}
+
+.btn-adivinhe {
+  background-color: #4fa764;
+  color: white;
+}
+
+.btn-adivinhe:hover {
+  background-color: #02701d;
+}
