@@ -150,6 +150,7 @@ footer {
 #pagina-principal {
   background: url('imagem_fundo_body.png') no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed; /* 🔒 Fundo fixo */
 }
 
 /*estilo da pagina de login e etc*/
